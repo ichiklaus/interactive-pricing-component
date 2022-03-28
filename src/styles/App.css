@@ -13,7 +13,7 @@ body,
 }
 
 body {
-  background-image: url(images/bg-pattern.svg);
+  background-image: url(../images/bg-pattern.svg);
   background-repeat: no-repeat;
 }
 main {
@@ -21,7 +21,7 @@ main {
 }
 
 .App {
-  background-image: url(images/pattern-circles.svg);
+  background-image: url(../images/pattern-circles.svg);
   background-repeat: no-repeat;
   background-position: 50% 0;
   margin-top: 10%;
@@ -93,7 +93,7 @@ main {
   cursor: pointer;
   border: none;
   box-shadow: 0px 10px 27px var(--strong-cyan);
-  background-image: url(images/icon-slider.svg);
+  background-image: url(../images/icon-slider.svg);
   background-repeat: no-repeat;
   background-position: 6px 10px;
 }
@@ -107,7 +107,8 @@ main {
   text-align: center;
 }
 
-.App-pricing__billing-period > span:nth-child(3), .App-pricing__billing-period > span:nth-child(2) {
+.App-pricing__billing-period > span:nth-child(3),
+.App-pricing__billing-period > span:nth-child(2) {
   margin-left: 15px;
 }
 
@@ -119,8 +120,7 @@ main {
   -moz-border-radius: 50px;
   -ms-border-radius: 50px;
   -o-border-radius: 50px;
-  padding: .15rem .5rem;
-
+  padding: 0.15rem 0.5rem;
 }
 
 .App-pricing__billing-period--discount > small {
@@ -164,14 +164,13 @@ main {
   transition: 0.4s;
 }
 
-
 input:checked + .slider {
   background-color: var(--strong-cyan);
 }
 
-input:not(:checked) + .slider {
+/* input:not(:checked) + .slider {
   background-color: var(--strong-cyan);
-}
+} */
 
 input:checked + .slider:before {
   -webkit-transform: translateX(26px);
@@ -209,7 +208,7 @@ input:checked + .slider:before {
 }
 
 .App-pricing-action__text > span::before {
-  content: url(images/icon-check.svg);
+  content: url(../images/icon-check.svg);
   margin-right: 15px;
 }
 
@@ -227,4 +226,26 @@ input:checked + .slider:before {
 .App-button__submit--dsb {
   color: var(--white);
   background-color: var(--dark-desaturated-blue);
+}
+
+footer {
+  position: absolute;
+  max-width: 100%;
+  bottom: 10px;
+  left: 0;
+  width: 99.8%;
+  font-size: 0.85rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social > * {
+  margin-left: 10px;
+  margin-right: 10px;
+  color: var(--strong-cyan);
+}
+
+.social > *:hover {
+  color: var(--dark-desaturated-blue);
 }
