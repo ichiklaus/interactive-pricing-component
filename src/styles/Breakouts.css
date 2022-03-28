@@ -1,16 +1,83 @@
-/* @import url('./Variables.css'); */
+@media screen and (max-width: 1439px) {
+  .App {
+    width: 100vw;
+  }
 
-@media screen and (max-width: 375px) {
+  main {
+    margin: 0 5%;
+  }
+
+  .App-pricing__billing {
+    padding: 1rem 0.6rem 2rem 0.6rem;
+    display: grid;
+    row-gap: 20px;
+    grid-template-areas:
+      "pageviews pageviews"
+      "slider slider"
+      "price price"
+      "billing-period billing-period";
+    grid-template-rows: 50px 1fr 4fr;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+  }
+
+  .App-pricing__billing > #pageviews {
+    grid-area: pageviews;
+    align-self: center;
+    margin-left: 10%;
+  }
+
+  .App-pricing__billing > #slider {
+    grid-area: slider;
+    align-self: center;
+  }
+
+  .App-pricing__billing-period::after {
+    content: "-25%";
+  }
+
+  .App-pricing__billing > #price {
+    grid-area: price;
+    align-self: center;
+    text-align: right;
+    margin-right: 10%;
+  }
+
+  .App-pricing__billing > #billing-period {
+    grid-area: billing-period;
+    align-self: center;
+  }
+
+  .App-pricing__billing-period > span:nth-child(3),
+  .App-pricing__billing-period > span:nth-child(2) {
+    margin-left: 5px;
+  }
+
+  .App-pricing-action,
+  .App-pricing-action__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .App-pricing-action {
+    gap: 2.5rem;
+    padding: 2rem 0 1.5rem 0;
+  }
+
+  .App-pricing-action__text {
+    gap: 0.25rem;
+  }
 }
 
-@media screen and (max-width: 1440px) {
+/* Base layout for desktop */
+@media screen and (min-width: 1440px) {
   .App {
     width: 45vw;
   }
 
   .App-pricing__billing {
-    padding: 1rem 1rem 2rem 1rem;
-
+    padding: 3rem 1rem 2rem 1rem;
     display: grid;
     row-gap: 20px;
     grid-template-areas:

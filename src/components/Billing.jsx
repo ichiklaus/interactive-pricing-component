@@ -16,23 +16,21 @@ class Billing extends Component {
   //   If the visitor switches the toggle to yearly billing, a 25% discount should be applied to all prices.
 
   priceOnChange = (event) => {
-    // this.setState({ pricingPrice: event.target.value });
-    event.target.value < 1000000
-      ? this.setState({ views: `${Math.trunc(event.target.value / 1000)}K` })
-      : this.setState({
-          views: `${Math.trunc(event.target.value / 1000000)}M`,
-        });
-
-    if (event.target.value <= 10000) {
+    if (event.target.value === (1).toString()) {
       this.setState({ pricingPrice: 8 });
-    } else if (event.target.value > 10000 && event.target.value <= 50000) {
+      this.setState({ views: `10K` });
+    } else if (event.target.value === (2).toString()) {
       this.setState({ pricingPrice: 12 });
-    } else if (event.target.value > 50000 && event.target.value <= 100000) {
+      this.setState({ views: `50K` });
+    } else if (event.target.value === (3).toString()) {
       this.setState({ pricingPrice: 16 });
-    } else if (event.target.value > 100000 && event.target.value <= 500000) {
+      this.setState({ views: `100K` });
+    } else if (event.target.value === (4).toString()) {
       this.setState({ pricingPrice: 24 });
-    } else if (event.target.value > 500000 && event.target.value <= 1000000) {
+      this.setState({ views: `500K` });
+    } else if (event.target.value === (5).toString()) {
       this.setState({ pricingPrice: 36 });
+      this.setState({ views: `1M` });
     }
   };
 
@@ -54,18 +52,16 @@ class Billing extends Component {
             name="pricing-slider"
             id="pricing-slider"
             className="pricing-slider-class"
-            min="10000"
-            max="1000000"
+            min="1"
+            max="5"
             onChange={this.priceOnChange}
           />
         </div>
         {/* Price */}
-        <p
-          id="price"
-          className="App-pricing__price"
-        >{`${currencyFormatter.format(this.state.pricingPrice)} /${
-          this.state.period
-        }`}</p>
+        <p id="price" className="App-pricing__price">
+          {`${currencyFormatter.format(this.state.pricingPrice)} `}
+          <span>/{this.state.period}</span>
+        </p>
         {/* Billing type */}
         <div id="billing-period" className="App-pricing__billing-period">
           <span>Monthly billing</span>
@@ -77,9 +73,9 @@ class Billing extends Component {
           </span>
           <span>
             Yearly billing
-            <span className="App-pricing__billing-period--discount">
-              <small>25% discount</small>
-            </span>
+            {/* <span className="App-pricing__billing-period--discount"> */}
+            {/* <small>25% discount</small> */}
+            {/* </span> */}
           </span>
         </div>
       </div>
